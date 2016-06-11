@@ -160,7 +160,7 @@ elseif ( is_front_page() ) {
 			$sldimages = array(
 						'1' => get_template_directory_uri().'/images/slides/slider1.jpg',
 						'2' => get_template_directory_uri().'/images/slides/slider2.jpg',
-						'3' => get_template_directory_uri().'/images/slides/slider1.jpg',
+						'3' => get_template_directory_uri().'/images/slides/05.jpg',
 			); ?>
             
         	<?php
