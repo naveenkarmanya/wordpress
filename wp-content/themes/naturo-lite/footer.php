@@ -36,14 +36,40 @@
                 
                 <div class="cols-4 widget-column-3">
                    <h5><?php esc_attr_e('Contact Info','naturo_lite'); ?></h5> 
-			    <?php if ( '' !== get_theme_mod( 'contact_add' ) ){  ?>
+<!--			    <?php if ( '' !== get_theme_mod( 'contact_add' ) ){  ?>
                  <p><?php echo esc_attr( get_theme_mod( 'contact_add', __('100 King St, Melbourne PIC 4000, Australia','naturo_lite')));
 			  ?></p>
 			  <?php } ?>
               <div class="phone-no"><strong><?php if ( '' !== get_theme_mod( 'contact_no' ) ){ ?><?php esc_attr_e('Phone:', 'naturo_lite'); } ?></strong> 
 			  <?php echo esc_attr( get_theme_mod( 'contact_no', __('+123 456 7890','naturo_lite'))); ?><br  />
            <strong> <?php if ( '' !== get_theme_mod( 'contact_no' ) ){ esc_attr_e('Email:', 'naturo_lite'); } ?></strong> <a href="mailto:<?php echo sanitize_email(get_theme_mod('contact_mail','contact@company.com')); ?>"><?php echo esc_attr(get_theme_mod('contact_mail','contact@company.com')); ?></a></div>
-                <div class="clear"></div>                
+                <div class="clear"></div>                -->
+                          <div class="form">
+                          <form id="contactForm" action="php/contact-form.php" method="POST" novalidate="novalidate">
+<div class="row">
+<div class="form-group">
+<div class="col-md-6"><label>Your name *</label>
+<input id="name" class="form-control" maxlength="100" name="name" required="" type="text" value="" data-msg-required="Please enter your name." /></div>
+<div class="col-md-6"><label>Your email address *</label>
+<input id="email" class="form-control" maxlength="100" name="email" required="" type="email" value="" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." /></div>
+</div>
+</div>
+<div class="row">
+<div class="form-group">
+<div class="col-md-12"><label>Subject</label>
+<input id="subject" class="form-control" maxlength="100" name="subject" required="" type="text" value="" data-msg-required="Please enter the subject." /></div>
+</div>
+</div>
+<div class="row">
+<div class="form-group">
+<div class="col-md-12"><label>Message *</label>
+<textarea id="message" class="form-control" maxlength="5000" name="message" required="" rows="10" data-msg-required="Please enter your message."></textarea></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12"><input class="btn btn-primary btn-lg" type="submit" value="Send Message" data-loading-text="Loading..." /></div>
+</div>
+</form></div>
                 <div class="social-icons">
 					<?php if ( '' !== get_theme_mod( 'fb_link' ) ) { ?>
                     <a title="facebook" class="fa fa-facebook fa-1x" target="_blank" href="<?php echo esc_url(get_theme_mod('fb_link','#facebook')); ?>"></a> 
