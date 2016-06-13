@@ -33,54 +33,32 @@
                     $args = array('posts_per_page' => 2, 'post__not_in' => get_option('sticky_posts'), 'orderby' => 'date', 'order' => 'desc');
                     $the_query = new WP_Query($args);
                     ?>
-<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+                    <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
                         <div class="recent-post">
                             <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail'); ?></a>
                             <a href="<?php the_permalink(); ?>"><h6><?php the_title(); ?></h6></a>  
-                        <?php echo wp_kses_post(naturo_lite_short_the_content(apply_filters('the_content', get_the_content()))); ?>
+                            <?php echo wp_kses_post(naturo_lite_short_the_content(apply_filters('the_content', get_the_content()))); ?>
                         </div>
-<?php endwhile; ?>
+                    <?php endwhile; ?>
                 </div>
 
                 <div class="cols-4 widget-column-3">
                     <h5><?php esc_attr_e('Contact Info', 'naturo_lite'); ?></h5> 
-                    <!--			    <?php if ('' !== get_theme_mod('contact_add')) { ?>
-                                         <p><?php echo esc_attr(get_theme_mod('contact_add', __('100 King St, Melbourne PIC 4000, Australia', 'naturo_lite')));
-    ?></p>
+                    <?php if ('' !== get_theme_mod('contact_add')) { ?>
+                        <p><?php echo esc_attr(get_theme_mod('contact_add', __('100 King St, Melbourne PIC 4000, Australia', 'naturo_lite')));
+                        ?></p>
                     <?php } ?>
-                                  <div class="phone-no"><strong><?php if ('' !== get_theme_mod('contact_no')) { ?><?php esc_attr_e('Phone:', 'naturo_lite');
-                } ?></strong> 
-<?php echo esc_attr(get_theme_mod('contact_no', __('+123 456 7890', 'naturo_lite'))); ?><br  />
-                               <strong> <?php if ('' !== get_theme_mod('contact_no')) {
-    esc_attr_e('Email:', 'naturo_lite');
-} ?></strong> <a href="mailto:<?php echo sanitize_email(get_theme_mod('contact_mail', 'contact@company.com')); ?>"><?php echo esc_attr(get_theme_mod('contact_mail', 'contact@company.com')); ?></a></div>
-                                    <div class="clear"></div>                -->
-                    <div class="form">
-                        <form id="contactForm" action="php/contact-form.php" method="POST" novalidate="novalidate">
-                            <div class="row">
-                                <div class="form-group">
-                                    <div class="col-md-6"><label>Your name *</label>
-                                        <input id="name" class="form-control" maxlength="50" name="name" required="" type="text" value="" /></div>
-                                    <div class="col-md-6"><label>Your email*</label>
-                                        <input id="email" class="form-control" maxlength="50" name="email" required="" type="email" value="" /></div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group">
-                                    <div class="col-md-12"><label>Subject</label>
-                                        <input id="subject" class="form-control" maxlength="50" name="subject" required="" type="text" value="" /></div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group">
-                                    <div class="col-md-12"><label>Message *</label>
-                                        <textarea id="message" class="form-control" maxlength="100" name="message" required="" rows="5"></textarea></div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12"><input class="btn btn-success" type="submit" value="Send Message"/></div>
-                            </div>
-                        </form></div><br>
+                    <div class="phone-no"><strong><?php if ('' !== get_theme_mod('contact_no')) { ?><?php esc_attr_e('Phone:', 'naturo_lite');
+                    }
+                    ?></strong> 
+                            <?php echo esc_attr(get_theme_mod('contact_no', __('+123 456 7890', 'naturo_lite'))); ?><br  />
+                        <strong> <?php
+                            if ('' !== get_theme_mod('contact_no')) {
+                                esc_attr_e('Email:', 'naturo_lite');
+                            }
+                            ?></strong> <a href="mailto:<?php echo sanitize_email(get_theme_mod('contact_mail', 'contact@company.com')); ?>"><?php echo esc_attr(get_theme_mod('contact_mail', 'contact@company.com')); ?></a></div>
+                    <div class="clear"></div>                
+
                     <div class="social-icons">
                         <?php if ('' !== get_theme_mod('fb_link')) { ?>
                             <a title="facebook" class="fa fa-facebook fa-1x" target="_blank" href="<?php echo esc_url(get_theme_mod('fb_link', '#facebook')); ?>"></a> 
