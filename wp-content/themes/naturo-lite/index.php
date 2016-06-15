@@ -17,8 +17,7 @@ get_header();
      <div class="page_content">
         <section class="site-main">
         	 <div class="blog-post">
-					<?php
-                    if ( have_posts() ) :
+                     <?php if ( have_posts() ) :
                         // Start the Loop.
                         while ( have_posts() ) : the_post();
                             /*
