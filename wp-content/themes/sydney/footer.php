@@ -20,7 +20,7 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info container">
 			
-                        <strong>Copyright &copy; 2016-2017 <a href="http://www.karmanya.co.in/"><b>KARMANYA SOFTWARE</b></a>.</strong> All rights are
+                        <strong>Copyright &copy; 2016-2017 <a href="http://www.karmanya.co.in/"></a>.</strong> All rights are
     reserved.	
                 </div><!-- .site-info -->
 	</footer><!-- #colophon -->
